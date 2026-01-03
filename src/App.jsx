@@ -3,8 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Welcome from './Welcome.jsx'
-import City from './City.jsx'
 import Image from './Logo'
+import About from './About.jsx'
+import Table from './Table.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -33,7 +34,8 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Welcome />
-      <City />
+      <About />
+      <Table />
     </>
   )
 }
