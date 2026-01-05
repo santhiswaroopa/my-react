@@ -6,12 +6,17 @@ import Welcome from './Welcome.jsx'
 import Image from './Logo'
 import About from './About.jsx'
 import Table from './Table.jsx'
+import ContactMe from './ContactMe.jsx'
+import GitHubLink from './GitHubLink.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <div className="top-right">
+        <ContactMe />
+      </div>
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -22,6 +27,7 @@ function App() {
         <Image />
       </div>
       <h1>Vite + React</h1>
+      <GitHubLink />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -36,6 +42,7 @@ function App() {
       <Welcome />
       <About />
       <Table />
+      
     </>
   )
 }
