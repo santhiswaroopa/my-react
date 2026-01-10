@@ -1,12 +1,17 @@
+import Counter from './Counter.jsx';
+import NameInput from './NameInput.jsx';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import NameChanger from './NameChanger.jsx'
+import Calculator from './Calculator.jsx';
 import Welcome from './Welcome.jsx'
 import Welcome2 from './Welcome2.jsx'
 import Image from './Logo'
 import About from './About.jsx'
 import Table from './Table.jsx'
+import PrimeNum from './PrimeNum.jsx';
 import ContactMe from './ContactMe.jsx'
 import GitHubLink from './GitHubLink.jsx';
 import Greeting from './Greeting.jsx';
@@ -21,15 +26,35 @@ import Employee from './Employee.jsx';
 import GreetingMessage from './GreetingMessage.jsx';
 import StudentInfo from './StudentInfo.jsx';
 import WelcomeUser from './WelcomeUser.jsx';
+import CourseApp from './CourseApp.jsx';
+import UseEffectDemo from './UseEffectDemo.jsx';
+import {createContext} from "react";
+//import Child from "./Child.jsx";
+//export const NameContext=createContext();
+
+//import {createContext} from "react";
+//import ChildTwo from "./ChildTwo.jsx";
+//export const AppContext=createContext();
+import ChildThird from "./ChildThird.jsx";
+export const NameChangeContext = createContext();
+
+
+const data={
+    name:"Santhi",
+    age:21,
+    score:95
+};
 
 function App() {
   const [count, setCount] = useState(0)
+  const [name, setName] = useState("Phaneendra");
 
   return (
     <>
       <div className="top-right">
         <ContactMe />
       </div>
+      
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -38,7 +63,11 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
         <Image />
+        <NameInput />
+        <Counter />
       </div>
+      <NameChanger />
+      <Calculator/>
       <h1>Vite + React</h1>
       <GitHubLink />
       <div className="card">
@@ -55,9 +84,11 @@ function App() {
       <Welcome />
       <Greeting name="santhi" />
       <About />
+      <UseEffectDemo />
       <Welcome2 />
       <Greeting2 name="swaroopa" />
       <Table />
+      <PrimeNum />
       <Student name="santhi" course="React" />
       <Welcome3 />
       <AddNums n1="30" n2="40" />
@@ -71,6 +102,10 @@ function App() {
       marks2="90" 
       marks3="85" />
       <WelcomeUser fname="santhi" lname="swaroopa"/>
+      <CourseApp/>
+      {/*<NameContext.Provider value="Santhi"><Child /></NameContext.Provider>*/}
+      {/*<AppContext.Provider value={data}><ChildTwo /></AppContext.Provider>*/}
+      <NameChangeContext.Provider value={{ name, setName }}><ChildThird /></NameChangeContext.Provider>
       </>
   )
 }
